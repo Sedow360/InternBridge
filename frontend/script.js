@@ -1,6 +1,6 @@
 // Global variables
 let currentUser = null;
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = '';
 
 // DOM elements
 const resumeForm = document.getElementById('resume-form');
