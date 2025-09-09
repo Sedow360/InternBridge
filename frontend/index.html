@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterBridge - Find Your Perfect Internship</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen hidden">
+        <div class="loader"></div>
+        <p>Processing your resume...</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-bridge"></i>
+                <span>InterBridge</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#opportunities" class="nav-link">Opportunities</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Language <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-link">English</a></li>
+                            <li><a href="#" class="dropdown-link">हिंदी (Hindi)</a></li>
+                            <li><a href="#" class="dropdown-link">বাংলা (Bengali)</a></li>
+                            <li><a href="#" class="dropdown-link">தமிழ் (Tamil)</a></li>
+                            <li><a href="#" class="dropdown-link">తెలుగు (Telugu)</a></li>
+                            <li><a href="#" class="dropdown-link">ગુજરાતી (Gujarati)</a></li>
+                            <li><a href="#" class="dropdown-link">ಕನ್ನಡ (Kannada)</a></li>
+                            <li><a href="#" class="dropdown-link">മലയാളം (Malayalam)</a></li>
+                            <li><a href="#" class="dropdown-link">ਪੰਜਾਬੀ (Punjabi)</a></li>
+                            <li><a href="#" class="dropdown-link">मराठी (Marathi)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Bridge Your Way to the Perfect Internship</h1>
+                <p>Upload your resume and get personalized internship recommendations powered by AI</p>
+                
+                <!-- Resume Upload Form -->
+                <div class="upload-section">
+                    <form id="resume-form" class="resume-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group file-upload-group">
+                            <label for="resume" class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span id="file-name">Choose Resume File</span>
+                                <small>PDF, DOCX, or TXT files only (Max 16MB)</small>
+                            </label>
+                            <input type="file" id="resume" name="resume" accept=".pdf,.docx,.txt" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Find My Internships
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results-section hidden">
+        <div class="container">
+            <div class="results-header">
+                <h2>Your Profile</h2>
+                <div id="user-info"></div>
+                <div id="extracted-skills"></div>
+            </div>
+            
+            <div class="recommendations">
+                <h3>Recommended Internships</h3>
+                <div id="recommendations-list"></div>
+            </div>
+            
+            <div class="all-internships">
+                <h3>All Available Internships</h3>
+                <div id="internships-list"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-bridge"></i>
+                    <span>InterBridge</span>
+                </div>
+                <p>&copy; 2025 InterBridge. Connecting talent with opportunities.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Application Submitted!</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <i class="fas fa-check-circle success-icon"></i>
+                <p>Your application has been submitted successfully. We'll contact you if there's a match!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - InterBridge</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-bridge"></i>
+                <span>InterBridge</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link active">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#opportunities" class="nav-link">Opportunities</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Language <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-link">English</a></li>
+                            <li><a href="#" class="dropdown-link">हिंदी (Hindi)</a></li>
+                            <li><a href="#" class="dropdown-link">বাংলা (Bengali)</a></li>
+                            <li><a href="#" class="dropdown-link">தமிழ் (Tamil)</a></li>
+                            <li><a href="#" class="dropdown-link">తెలుగు (Telugu)</a></li>
+                            <li><a href="#" class="dropdown-link">ગુજરાતી (Gujarati)</a></li>
+                            <li><a href="#" class="dropdown-link">ಕನ್ನಡ (Kannada)</a></li>
+                            <li><a href="#" class="dropdown-link">മലയാളം (Malayalam)</a></li>
+                            <li><a href="#" class="dropdown-link">ਪੰਜਾਬੀ (Punjabi)</a></li>
+                            <li><a href="#" class="dropdown-link">मराठी (Marathi)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <h1>Student Login</h1>
+                    <p>Access your InterBridge account</p>
+                </div>
+
+                <form id="login-form" class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                            <button type="button" class="password-toggle" id="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember-me" name="remember">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-login">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </button>
+                </form>
+
+                <div class="login-divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="btn btn-google">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button class="btn btn-linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                        Continue with LinkedIn
+                    </button>
+                </div>
+
+                <div class="signup-prompt">
+                    <p>Don't have an account? <a href="index.html">Start by uploading your resume</a></p>
+                </div>
+            </div>
+
+            <div class="login-features">
+                <h3>Why Login to InterBridge?</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-bookmark"></i>
+                        <h4>Save Favorites</h4>
+                        <p>Bookmark internships you're interested in</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Track Applications</h4>
+                        <p>Monitor your application status in real-time</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-bell"></i>
+                        <h4>Get Notifications</h4>
+                        <p>Receive alerts for new matching opportunities</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <h4>Profile Management</h4>
+                        <p>Update your skills and preferences anytime</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-bridge"></i>
+                    <span>InterBridge</span>
+                </div>
+                <p>&copy; 2025 InterBridge. Connecting talent with opportunities.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>
