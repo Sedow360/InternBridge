@@ -1,6 +1,6 @@
-# InterBridge - Internship Matching Platform
+# InternBridge - Internship Matching Platform
 
-InterBridge is a simple, phone-first web application that connects students with internship opportunities using AI-powered resume analysis and recommendation.
+InternBridge is a simple, phone-first web application that connects students with internship opportunities using AI-powered resume analysis and recommendation.
 
 ## Features
 
@@ -88,7 +88,7 @@ InterBridge/
 ├── backend/
 │   ├── app.py                 # Main Flask application
 │   ├── requirements.txt       # Python dependencies
-│   └── interbridge.db        # SQLite database (auto-created)
+│   └── internbridge.db        # SQLite database (auto-created)
 ├── frontend/
 │   ├── index.html            # Main HTML file
 │   ├── style.css             # Stylesheet
@@ -174,4 +174,4 @@ For questions or issues, please create an issue in the repository or contact the
 
 ---
 
-**InterBridge** - Bridging the gap between talent and opportunity! 🌉
+**InternBridge** - Bridging the gap between talent and opportunity! 🌉

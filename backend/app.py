@@ -30,7 +30,7 @@ CORS(app)
 
 # Configuration
 UPLOAD_FOLDER = '../uploads'
-DATABASE = 'interbridge.db'
+DATABASE = 'internbridge.db'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
@@ -492,7 +492,3 @@ def get_user_applications(user_id):
     
     conn.close()
     return jsonify(result)
-
-if __name__ == '__main__':
-    init_db()
-    app.run(debug=True, host='0.0.0.0', port=5000)

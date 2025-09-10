@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Starting InterBridge Application..."
+echo "Starting InternBridge Application..."
 echo
 
 echo "Setting up Python virtual environment..."

@@ -62,8 +62,8 @@ function handleLogin(e) {
             
             // Store user session if remember me is checked
             if (remember) {
-                localStorage.setItem('interbridge_remember', 'true');
-                localStorage.setItem('interbridge_email', email);
+                localStorage.setItem('internbridge_remember', 'true');
+                localStorage.setItem('internbridge_email', email);
             }
             
             // Redirect to main page after 2 seconds
@@ -216,8 +216,8 @@ function validateEmail(email) {
 
 // Auto-fill email if remembered
 document.addEventListener('DOMContentLoaded', function() {
-    const rememberedEmail = localStorage.getItem('interbridge_email');
-    const rememberMe = localStorage.getItem('interbridge_remember');
+    const rememberedEmail = localStorage.getItem('internbridge_email');
+    const rememberMe = localStorage.getItem('internbridge_remember');
     
     if (rememberMe === 'true' && rememberedEmail) {
         document.getElementById('email').value = rememberedEmail;
