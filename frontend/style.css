@@ -654,6 +654,68 @@ body {
     font-size: 1.1rem;
 }
 
+/* User Type Tabs */
+.user-type-tabs {
+    display: flex;
+    background: #f3f4f6;
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 30px;
+}
+
+.tab-button {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.tab-button.active {
+    background: white;
+    color: #2563eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button:hover:not(.active) {
+    color: #374151;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.tab-button i {
+    font-size: 1.2rem;
+}
+
+.tab-button span {
+    font-size: 0.9rem;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Company Form Specific Styles */
+#company-login-form .input-group i.fa-building {
+    color: #2563eb;
+}
+
+#company-login-form .input-group i.fa-id-card {
+    color: #059669;
+}
+
 .login-form .form-group {
     margin-bottom: 25px;
 }
@@ -877,6 +939,35 @@ body {
     line-height: 1.5;
 }
 
+/* Feature Sets */
+.student-features,
+.company-features {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.student-features.active,
+.company-features.active {
+    display: grid;
+}
+
+/* Company Feature Colors */
+.company-features .feature-item:nth-child(1) i {
+    color: #10b981;
+}
+
+.company-features .feature-item:nth-child(2) i {
+    color: #3b82f6;
+}
+
+.company-features .feature-item:nth-child(3) i {
+    color: #f59e0b;
+}
+
+.company-features .feature-item:nth-child(4) i {
+    color: #ef4444;
+}
+
 .nav-link.active {
     background: rgba(255, 255, 255, 0.15);
     border-radius: 6px;
@@ -1038,5 +1129,17 @@ body {
     
     .social-login {
         flex-direction: column;
+    }
+    
+    .tab-button {
+        padding: 12px 8px;
+    }
+    
+    .tab-button span {
+        font-size: 0.8rem;
+    }
+    
+    .tab-button i {
+        font-size: 1rem;
     }
 }

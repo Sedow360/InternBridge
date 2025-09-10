@@ -1,9 +1,11 @@
 // DOM elements
-const loginForm = document.getElementById('login-form');
-const passwordInput = document.getElementById('password');
-const passwordToggle = document.getElementById('password-toggle');
+const studentLoginForm = document.getElementById('student-login-form');
+const companyLoginForm = document.getElementById('company-login-form');
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabContents = document.querySelectorAll('.tab-content');
+const passwordToggles = document.querySelectorAll('.password-toggle');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
@@ -12,31 +14,78 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Event listeners
 function setupEventListeners() {
-    // Login form submission
-    loginForm.addEventListener('submit', handleLogin);
+    // Login form submissions
+    studentLoginForm.addEventListener('submit', (e) => handleLogin(e, 'student'));
+    companyLoginForm.addEventListener('submit', (e) => handleLogin(e, 'company'));
     
-    // Password toggle
-    passwordToggle.addEventListener('click', togglePassword);
+    // Tab switching
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => switchTab(button.dataset.tab));
+    });
+    
+    // Password toggles
+    passwordToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => togglePassword(toggle));
+    });
     
     // Mobile navigation
-    navToggle.addEventListener('click', toggleMobileNav);
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', toggleMobileNav);
+    }
     
     // Social login buttons
     document.querySelector('.btn-google').addEventListener('click', handleGoogleLogin);
     document.querySelector('.btn-linkedin').addEventListener('click', handleLinkedInLogin);
     
-    // Forgot password link
-    document.querySelector('.forgot-password').addEventListener('click', handleForgotPassword);
+    // Forgot password links
+    document.querySelectorAll('.forgot-password').forEach(link => {
+        link.addEventListener('click', handleForgotPassword);
+    });
+}
+
+// Switch between tabs
+function switchTab(tabType) {
+    // Update tab buttons
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+        if (button.dataset.tab === tabType) {
+            button.classList.add('active');
+        }
+    });
+    
+    // Update tab contents
+    tabContents.forEach(content => {
+        content.classList.remove('active');
+        if (content.dataset.content === tabType) {
+            content.classList.add('active');
+        }
+    });
+    
+    // Update features section
+    const studentFeatures = document.getElementById('student-features');
+    const companyFeatures = document.getElementById('company-features');
+    const featuresTitle = document.getElementById('features-title');
+    
+    if (tabType === 'student') {
+        studentFeatures.classList.add('active');
+        companyFeatures.classList.remove('active');
+        featuresTitle.textContent = 'Why Students Choose InterBridge?';
+    } else {
+        studentFeatures.classList.remove('active');
+        companyFeatures.classList.add('active');
+        featuresTitle.textContent = 'Why Companies Choose InterBridge?';
+    }
 }
 
 // Handle login form submission
-function handleLogin(e) {
+function handleLogin(e, userType) {
     e.preventDefault();
     
-    const formData = new FormData(loginForm);
+    const formData = new FormData(e.target);
     const email = formData.get('email');
     const password = formData.get('password');
     const remember = formData.get('remember');
+    const companyId = formData.get('company_id'); // Only for company login
     
     // Basic validation
     if (!email || !password) {
@@ -50,25 +99,38 @@ function handleLogin(e) {
     }
     
     // Show loading state
-    showLoading(true);
+    showLoading(true, userType);
     
     // Simulate login process (replace with actual API call)
     setTimeout(() => {
-        showLoading(false);
+        showLoading(false, userType);
         
         // For demo purposes, accept any email/password combination
         if (email && password) {
-            showMessage('Login successful! Redirecting...', 'success');
+            const message = userType === 'student' 
+                ? 'Student login successful! Redirecting...' 
+                : 'Company login successful! Redirecting to dashboard...';
+            
+            showMessage(message, 'success');
             
             // Store user session if remember me is checked
             if (remember) {
-                localStorage.setItem('internbridge_remember', 'true');
-                localStorage.setItem('internbridge_email', email);
+                localStorage.setItem('interbridge_remember', 'true');
+                localStorage.setItem('interbridge_email', email);
+                localStorage.setItem('interbridge_usertype', userType);
+                if (companyId) {
+                    localStorage.setItem('interbridge_company_id', companyId);
+                }
             }
             
-            // Redirect to main page after 2 seconds
+            // Redirect based on user type
             setTimeout(() => {
-                window.location.href = 'index.html';
+                if (userType === 'student') {
+                    window.location.href = 'index.html';
+                } else {
+                    // For companies, redirect to a company dashboard (create this later)
+                    window.location.href = 'index.html?view=company';
+                }
             }, 2000);
         } else {
             showMessage('Invalid email or password', 'error');
@@ -77,11 +139,16 @@ function handleLogin(e) {
 }
 
 // Toggle password visibility
-function togglePassword() {
+function togglePassword(toggleElement) {
+    const targetId = toggleElement.dataset.target;
+    const passwordInput = document.getElementById(targetId);
+    
+    if (!passwordInput) return;
+    
     const type = passwordInput.type === 'password' ? 'text' : 'password';
     passwordInput.type = type;
     
-    const icon = passwordToggle.querySelector('i');
+    const icon = toggleElement.querySelector('i');
     if (type === 'password') {
         icon.classList.remove('fa-eye-slash');
         icon.classList.add('fa-eye');
@@ -116,15 +183,20 @@ function handleForgotPassword(e) {
 }
 
 // Show loading state
-function showLoading(show) {
-    const submitBtn = loginForm.querySelector('button[type="submit"]');
+function showLoading(show, userType = 'student') {
+    const form = userType === 'student' ? studentLoginForm : companyLoginForm;
+    const submitBtn = form.querySelector('button[type="submit"]');
     
     if (show) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
     } else {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Login';
+        if (userType === 'student') {
+            submitBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Login as Student';
+        } else {
+            submitBtn.innerHTML = '<i class="fas fa-building"></i> Login as Company';
+        }
     }
 }
 
