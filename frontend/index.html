@@ -64,37 +64,135 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Bridge Your Way to the Perfect Internship</h1>
-                <p>Upload your resume and get personalized internship recommendations powered by AI</p>
+                <div class="hero-text">
+                    <div class="badge">
+                        <i class="fas fa-star"></i>
+                        <span>Government Initiative</span>
+                    </div>
+                    <h1>Prime Minister's Internship Scheme</h1>
+                    <h2>InterBridge Platform</h2>
+                    <p class="hero-subtitle">Empowering India's youth through quality internship opportunities</p>
+                    <p class="hero-description">A flagship initiative to bridge the gap between education and employment, providing students with real-world experience in leading companies across India.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">50,000+</div>
+                            <div class="stat-label">Students Registered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2,500+</div>
+                            <div class="stat-label">Partner Companies</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15,000+</div>
+                            <div class="stat-label">Internships Completed</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <a href="#apply-now" class="btn btn-primary-gov">
+                            <i class="fas fa-user-graduate"></i>
+                            Apply for Internship
+                        </a>
+                        <a href="#learn-more" class="btn btn-secondary-gov">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
                 
-                <!-- Resume Upload Form -->
+                <div class="hero-visual">
+                    <div class="hero-image">
+                        <div class="emblem">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="floating-cards">
+                            <div class="card-float card-1">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Tech Internships</span>
+                            </div>
+                            <div class="card-float card-2">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Analytics Roles</span>
+                            </div>
+                            <div class="card-float card-3">
+                                <i class="fas fa-palette"></i>
+                                <span>Design Positions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quick Apply Section -->
+    <section id="apply-now" class="quick-apply">
+        <div class="container">
+            <div class="apply-header">
+                <h2>Quick Apply</h2>
+                <p>Start your journey with the PM Internship Scheme</p>
+            </div>
+            
+            <div class="apply-content">
+                <div class="apply-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Upload Resume</h3>
+                        <p>Share your academic and professional background</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>AI Matching</h3>
+                        <p>Our system finds the best internships for you</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Get Selected</h3>
+                        <p>Start your internship journey with top companies</p>
+                    </div>
+                </div>
+                
                 <div class="upload-section">
                     <form id="resume-form" class="resume-form">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number (Optional)</label>
-                            <input type="tel" id="phone" name="phone">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="education">Education Level</label>
+                                <select id="education" name="education" required>
+                                    <option value="">Select Education Level</option>
+                                    <option value="diploma">Diploma</option>
+                                    <option value="undergraduate">Undergraduate</option>
+                                    <option value="postgraduate">Postgraduate</option>
+                                    <option value="phd">PhD</option>
+                                </select>
+                            </div>
                         </div>
                         
                         <div class="form-group file-upload-group">
                             <label for="resume" class="file-upload-label">
                                 <i class="fas fa-cloud-upload-alt"></i>
-                                <span id="file-name">Choose Resume File</span>
+                                <span id="file-name">Upload Your Resume</span>
                                 <small>PDF, DOCX, or TXT files only (Max 16MB)</small>
                             </label>
                             <input type="file" id="resume" name="resume" accept=".pdf,.docx,.txt" required>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-submit">
                             <i class="fas fa-rocket"></i>
                             Find My Internships
                         </button>
@@ -104,6 +202,172 @@
         </div>
     </section>
 
+    <!-- Features Section -->
+    <section id="learn-more" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose PM Internship Scheme?</h2>
+                <p>Discover the benefits of India's premier internship platform</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Government Backed</h3>
+                    <p>Official initiative by the Government of India ensuring credibility and quality standards</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Matching</h3>
+                    <p>Advanced algorithms match your skills with the most suitable internship opportunities</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Top Companies</h3>
+                    <p>Partner with leading organizations across various industries nationwide</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certified Programs</h3>
+                    <p>Receive official certificates and gain valuable industry experience</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Stipend Support</h3>
+                    <p>Financial assistance and stipends for deserving candidates during internships</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Skill Development</h3>
+                    <p>Comprehensive training programs to enhance your professional capabilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partner Companies Section -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Partner Companies</h2>
+                <p>Join internships at India's leading organizations</p>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Microsoft</span>
+                    </div>
+                </div>
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </div>
+                </div>
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fab fa-amazon"></i>
+                        <span>Amazon</span>
+                    </div>
+                </div>
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fas fa-building"></i>
+                        <span>TCS</span>
+                    </div>
+                </div>
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fas fa-industry"></i>
+                        <span>Infosys</span>
+                    </div>
+                </div>
+                <div class="partner-logo">
+                    <div class="logo-placeholder">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Wipro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>Hear from our successful interns</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The PM Internship Scheme gave me the perfect platform to start my career. The AI matching system found me an internship that perfectly aligned with my skills."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Software Engineer Intern at TCS</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Amazing experience! The program not only provided me with industry exposure but also helped me build a strong professional network."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Rahul Patel</h4>
+                            <p>Data Analyst Intern at Infosys</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The structured approach and government backing gave me confidence. I learned so much and got a job offer right after my internship!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Ananya Singh</h4>
+                            <p>Marketing Intern at Microsoft</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Results Section -->
     <section id="results" class="results-section hidden">
         <div class="container">
@@ -119,7 +383,7 @@
             </div>
             
             <div class="all-internships">
-                <h3>All Available Internships</h3>
+                <h3 id="opportunities">All Available Internships</h3>
                 <div id="internships-list"></div>
             </div>
         </div>
