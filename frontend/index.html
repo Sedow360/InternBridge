@@ -31,7 +31,7 @@
                         <a href="login.html" class="nav-link">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#opportunities" class="nav-link">Opportunities</a>
+                        <a href="opportunities.html" class="nav-link">Opportunities</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle">
@@ -90,7 +90,7 @@
                     </div>
                     
                     <div class="hero-buttons">
-                        <a href="#apply-now" class="btn btn-primary-gov">
+                        <a href="opportunities.html" class="btn btn-primary-gov">
                             <i class="fas fa-user-graduate"></i>
                             Apply for Internship
                         </a>
@@ -339,110 +339,7 @@
         </div>
     </section>
     
-    <!-- Opportunities Section -->
-    <section id="opportunities" class="opportunities-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Find Your Perfect Internship</h2>
-                <p>Upload your resume and let our AI match you with the best opportunities</p>
-            </div>
-            
-            <div class="opportunities-content">
-                <div class="upload-section">
-                    <form id="resume-form" class="resume-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="education">Education Level</label>
-                                <select id="education" name="education" required>
-                                    <option value="">Select Education Level</option>
-                                    <option value="diploma">Diploma</option>
-                                    <option value="undergraduate">Undergraduate</option>
-                                    <option value="postgraduate">Postgraduate</option>
-                                    <option value="phd">PhD</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group file-upload-group">
-                            <label for="resume" class="file-upload-label">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <span id="file-name">Upload Your Resume</span>
-                                <small>PDF, DOCX, or TXT files only (Max 16MB)</small>
-                            </label>
-                            <input type="file" id="resume" name="resume" accept=".pdf,.docx,.txt" required>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-submit">
-                            <i class="fas fa-rocket"></i>
-                            Find My Internships
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="opportunities-info">
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3>Quick Processing</h3>
-                        <p>Your resume is analyzed in under 30 seconds using advanced AI technology</p>
-                    </div>
-                    
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Secure & Private</h3>
-                        <p>Your data is encrypted and protected according to government security standards</p>
-                    </div>
-                    
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-target"></i>
-                        </div>
-                        <h3>Smart Matching</h3>
-                        <p>Get personalized recommendations based on your skills and career aspirations</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Results Section -->
-    <section id="results" class="results-section hidden">
-        <div class="container">
-            <div class="results-header">
-                <h2>Your Profile</h2>
-                <div id="user-info"></div>
-                <div id="extracted-skills"></div>
-            </div>
-            
-            <div class="recommendations">
-                <h3>Recommended Internships</h3>
-                <div id="recommendations-list"></div>
-            </div>
-            
-            <div class="all-internships">
-                <h3>All Available Internships</h3>
-                <div id="internships-list"></div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Footer -->
     <footer class="footer">
